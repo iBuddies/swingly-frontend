@@ -10,7 +10,7 @@ export default function AdminPage() {
   return (
     <div className="flex min-h-screen">
       <Sidebar />
-      <main className="flex-1 flex flex-col overflow-y-auto p-8">
+      <main className="flex-1 flex flex-col overflow-y-auto p-8 ml-64">
         <div className="max-w-7xl w-full mx-auto">
           <div className="flex flex-wrap items-start justify-between gap-4 border-b border-border-light dark:border-zinc-700 pb-8">
             <div className="flex flex-col gap-2">

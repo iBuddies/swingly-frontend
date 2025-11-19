@@ -4,7 +4,7 @@ export default function ProfilePage() {
   return (
     <div className="flex min-h-screen bg-background-light dark:bg-background-dark text-text-primary dark:text-white">
       <Sidebar />
-      <main className="flex-1 p-8">
+      <main className="flex-1 p-8 ml-64">
         <div className="max-w-7xl ml-0">
           <div className="flex flex-wrap items-start justify-between gap-4 border-b border-border-light dark:border-zinc-700 pb-8">
             <div className="flex flex-col gap-2">

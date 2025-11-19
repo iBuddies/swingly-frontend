@@ -1,7 +1,7 @@
 "use client"
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function Sidebar() {
   const pathname = usePathname()
@@ -25,8 +25,24 @@ export default function Sidebar() {
     setIsDark(document.documentElement.classList.contains('dark'))
   }
 
+  const asideRef = useRef(null)
+  useEffect(() => {
+    const el = asideRef.current
+    if (!el) return
+    const block = (e) => { e.preventDefault(); e.stopPropagation() }
+    el.addEventListener('wheel', block, { passive: false })
+    el.addEventListener('touchmove', block, { passive: false })
+    return () => {
+      el.removeEventListener('wheel', block)
+      el.removeEventListener('touchmove', block)
+    }
+  }, [])
+
   return (
-    <aside className="sticky top-0 h-screen w-64 flex flex-col justify-between border-r border-border-light dark:border-zinc-800 bg-background-light dark:bg-background-dark p-4 overflow-y-auto">
+    <aside
+      ref={asideRef}
+      className="fixed left-0 top-0 h-screen w-64 flex flex-col justify-between border-r border-border-light dark:border-zinc-800 bg-background-light dark:bg-background-dark p-4 overscroll-none"
+    >
       <div className="flex flex-col gap-8">
         <div className="flex items-center gap-3 px-3">
           <span className="material-symbols-outlined text-3xl">sports_tennis</span>

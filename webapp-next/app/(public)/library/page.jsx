@@ -11,7 +11,7 @@ export default function Page() {
   return (
     <div className="relative flex min-h-screen w-full font-display dark:bg-background-dark dark:text-white">
       <Sidebar />
-      <main className="flex-1 p-8">
+      <main className="flex-1 p-8 ml-64">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-wrap items-start justify-between gap-4 border-b border-border-light dark:border-zinc-800 pb-8">
             <div className="flex flex-col gap-2">
@@ -59,4 +59,3 @@ export default function Page() {
     </div>
   )
 }
-
