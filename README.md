@@ -44,3 +44,9 @@ This repo contains the Next.js web app for Swingly. Static HTML mocks live under
 - Sidebar scroll isolation: the sidebar blocks wheel/touch so the main page doesn’t scroll when hovering nav.
 - If you adjust sidebar width, update `ml-64` across pages.
 - For production hardening, we can switch from Tailwind CDN to a local Tailwind/PostCSS setup on request.
+
+## Contributing
+- Read: `AGENTS.md` for repository guidelines (structure, style, PR conventions).
+- Commits: use Conventional Commits, e.g. `feat(library): add empty state`.
+- PRs: include a short summary, linked issues, and before/after screenshots for UI changes; note dark‑mode, responsiveness, and accessibility checks.
+- Scope: keep PRs focused (one surface or feature slice when possible).
