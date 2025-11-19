@@ -13,19 +13,15 @@ export default function AnalysisPage({ params }) {
   return (
     <div className="flex min-h-screen bg-background-light dark:bg-background-dark text-text-primary dark:text-white">
       <Sidebar />
-      <main className="flex-1 flex flex-col overflow-hidden">
-        {/* Top bar */}
-        <header className="flex h-16 items-center justify-between border-b border-border-light dark:border-zinc-700 px-6 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
-          <div className="relative max-w-sm w-full">
-            <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary dark:text-white/70">search</span>
-            <input className="form-input w-full rounded-md border border-border-light dark:border-zinc-700 bg-transparent h-10 pl-10 text-sm" placeholder="Search analysis..." />
+      <main className="flex-1 flex flex-col overflow-hidden p-8">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="flex flex-wrap items-start justify-between gap-4 border-b border-border-light dark:border-zinc-700 pb-8">
+            <div className="flex flex-col gap-2">
+              <p className="text-3xl font-bold tracking-tight">Video Analysis</p>
+              <p className="text-gray-500 dark:text-gray-400">Key moments, notes, and drills for your match.</p>
+            </div>
           </div>
-          <div className="flex items-center gap-2">
-            <button className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-zinc-800 text-text-secondary dark:text-white/70"><span className="material-symbols-outlined">share</span></button>
-            <a href="/library" className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-zinc-800 text-text-secondary dark:text-white/70"><span className="material-symbols-outlined">arrow_back</span></a>
-          </div>
-        </header>
-
+        </div>
         {/* Content */}
         <div className="flex-1 p-6 sm:p-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-3 gap-8">

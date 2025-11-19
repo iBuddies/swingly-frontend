@@ -45,8 +45,15 @@ export default function BillingPage() {
     <div className="flex min-h-screen bg-background-light dark:bg-background-dark text-text-primary dark:text-white">
       <Sidebar />
       <main className="flex-1 p-8">
-        <div className="max-w-6xl mx-auto w-full px-2 sm:px-4">
-          <h1 className="text-4xl font-black leading-tight tracking-[-0.033em] text-center mb-10">Find the Perfect Plan for Your Game</h1>
+        <div className="max-w-7xl mx-auto w-full px-2 sm:px-4">
+          <div className="flex flex-wrap items-start justify-between gap-4 border-b border-border-light dark:border-zinc-800 pb-8">
+            <div className="flex flex-col gap-2">
+              <p className="text-3xl font-bold tracking-tight">Subscription</p>
+              <p className="text-gray-500 dark:text-gray-400">Find the perfect plan for your game.</p>
+            </div>
+          </div>
+          <h2 className="sr-only">Plans</h2>
+          <div className="mt-8"></div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {plans.map((p) => (
               <div key={p.name} className={`flex flex-col gap-6 rounded-xl border border-[#dbdfe6] dark:border-zinc-700 bg-white dark:bg-background-dark p-8 min-h-[460px]` }>

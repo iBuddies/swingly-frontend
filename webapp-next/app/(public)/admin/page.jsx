@@ -10,24 +10,20 @@ export default function AdminPage() {
   return (
     <div className="flex min-h-screen">
       <Sidebar />
-      <main className="flex-1 flex flex-col overflow-y-auto">
-        <header className="sticky top-0 z-10 flex items-center justify-between border-b border-border-light px-10 py-4 bg-background-light/80 backdrop-blur-sm">
-          <div className="relative max-w-sm w-full">
-            <div className="text-text-secondary absolute left-3 top-1/2 -translate-y-1/2">
-              <span className="material-symbols-outlined text-xl">search</span>
+      <main className="flex-1 flex flex-col overflow-y-auto p-8">
+        <div className="max-w-7xl w-full mx-auto">
+          <div className="flex flex-wrap items-start justify-between gap-4 border-b border-border-light dark:border-zinc-700 pb-8">
+            <div className="flex flex-col gap-2">
+              <p className="text-3xl font-bold tracking-tight">Admin Dashboard</p>
+              <p className="text-gray-500 dark:text-gray-400">Review submissions and manage analyses.</p>
             </div>
-            <input className="form-input w-full rounded-md border border-border-light bg-transparent h-10 pl-10 text-sm" placeholder="Search submissions..." />
           </div>
-          <div className="flex items-center gap-2">
-            <button className="p-2 rounded-md hover:bg-gray-100 text-text-secondary"><span className="material-symbols-outlined">notifications</span></button>
-            <button className="p-2 rounded-md hover:bg-gray-100 text-text-secondary"><span className="material-symbols-outlined">account_circle</span></button>
-          </div>
-        </header>
+        </div>
 
-        <div className="p-8">
-          <div className="border border-border-light rounded-lg overflow-x-auto">
+        <div className="p-0 max-w-7xl w-full mx-auto mt-8">
+          <div className="border border-border-light dark:border-zinc-700 rounded-lg overflow-x-auto">
             <table className="w-full text-sm text-left">
-              <thead className="text-xs text-text-secondary uppercase bg-white">
+              <thead className="text-xs text-text-secondary dark:text-white/70 uppercase bg-white dark:bg-background-dark">
                 <tr>
                   <th className="p-4 w-12"></th>
                   <th className="px-6 py-4 font-medium">User</th>
@@ -69,4 +65,3 @@ export default function AdminPage() {
     </div>
   )
 }
-

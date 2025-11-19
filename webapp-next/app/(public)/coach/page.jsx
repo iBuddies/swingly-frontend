@@ -39,14 +39,15 @@ export default function CoachPage() {
   return (
     <div className="relative flex min-h-screen w-full bg-background-light dark:bg-background-dark text-text-primary dark:text-white">
       <Sidebar />
-      <main className="flex-1 flex flex-col">
-        <header className="flex h-16 items-center justify-between border-b border-border-light dark:border-zinc-700 bg-white dark:bg-background-dark px-6 shrink-0">
-          <h1 className="text-lg font-semibold">AI Coach</h1>
-          <div className="flex items-center gap-4">
-            <button className="text-text-secondary dark:text-white/70 hover:text-text-primary"><span className="material-symbols-outlined">notifications</span></button>
-            <button className="text-text-secondary dark:text-white/70 hover:text-text-primary"><span className="material-symbols-outlined">help</span></button>
+      <main className="flex-1 flex flex-col p-8">
+        <div className="max-w-7xl w-full mx-auto">
+          <div className="flex flex-wrap items-start justify-between gap-4 border-b border-border-light dark:border-zinc-700 pb-8">
+            <div className="flex flex-col gap-2">
+              <p className="text-3xl font-bold tracking-tight">AI Coach</p>
+              <p className="text-gray-500 dark:text-gray-400">Ask questions about your game and analysis.</p>
+            </div>
           </div>
-        </header>
+        </div>
 
         <div className="flex-1 flex flex-col p-6">
           <div className="flex-1 flex flex-col bg-white dark:bg-background-dark border border-border-light dark:border-zinc-700 rounded-xl">
