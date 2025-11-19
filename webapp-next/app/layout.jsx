@@ -12,7 +12,6 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;900&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
         <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
         <script dangerouslySetInnerHTML={{ __html: `

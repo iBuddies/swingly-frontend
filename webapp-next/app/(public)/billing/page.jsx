@@ -42,7 +42,7 @@ const plans = [
 
 export default function BillingPage() {
   return (
-    <div className="flex min-h-screen font-inter bg-background-light dark:bg-background-dark text-text-primary dark:text-white">
+    <div className="flex min-h-screen bg-background-light dark:bg-background-dark text-text-primary dark:text-white">
       <Sidebar />
       <main className="flex-1 p-8">
         <div className="max-w-6xl mx-auto w-full px-2 sm:px-4">
