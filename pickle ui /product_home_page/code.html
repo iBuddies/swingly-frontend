@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Pickleball Coach - Personalized Coaching</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#10B981",
+            "background-light": "#F9F9F9",
+            "text-primary": "#2D2D2D",
+            "text-secondary": "#6B7280",
+            "border-light": "#E5E5E5",
+          },
+          fontFamily: {
+            "display": ["Lexend", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "full": "9999px",
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+  </style>
+</head>
+<body class="font-display bg-background-light text-text-primary">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 flex items-center justify-center border-b border-solid border-border-light bg-background-light/80 px-4 py-3 backdrop-blur-sm">
+<div class="flex w-full max-w-6xl items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-6 text-primary">
+<svg fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"></path>
+</svg>
+</div>
+<h2 class="text-text-primary text-lg font-bold tracking-tight">AI Pickleball Coach</h2>
+</div>
+<div class="hidden items-center gap-8 md:flex">
+<a class="text-text-secondary hover:text-text-primary text-sm font-medium" href="#">Features</a>
+<a class="text-text-secondary hover:text-text-primary text-sm font-medium" href="#">Pricing</a>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold transition-opacity hover:opacity-90">
+<span class="truncate">Sign Up</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex flex-1 flex-col items-center">
+<div class="w-full max-w-4xl px-4">
+<!-- HeroSection -->
+<section class="text-center py-20 sm:py-28">
+<div class="flex flex-col items-center gap-6">
+<div class="flex flex-col gap-4">
+<h1 class="text-text-primary text-4xl font-black leading-tight tracking-tighter md:text-6xl">Elevate Your Pickleball Game with AI</h1>
+<h2 class="text-text-secondary text-base font-normal leading-normal md:text-lg">Get personalized coaching through AI-powered video analysis and chat. Improve your skills, faster.</h2>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold tracking-wide transition-opacity hover:opacity-90">
+<span class="truncate">Get Your Free Analysis</span>
+</button>
+</div>
+</section>
+<!-- "How It Works" Section -->
+<section class="py-16">
+<h2 class="text-text-primary text-center text-3xl font-bold tracking-tight mb-12">How It Works</h2>
+<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+<div class="flex flex-1 flex-col items-center gap-4 rounded-lg border border-border-light bg-white p-6 text-center">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined" style="font-size: 28px;">upload</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-text-primary text-lg font-bold">1. Upload Your Match</h3>
+<p class="text-text-secondary text-sm">Easily upload a video of your gameplay from any device.</p>
+</div>
+</div>
+<div class="flex flex-1 flex-col items-center gap-4 rounded-lg border border-border-light bg-white p-6 text-center">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined" style="font-size: 28px;">spark</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-text-primary text-lg font-bold">2. Receive AI Analysis</h3>
+<p class="text-text-secondary text-sm">Our AI breaks down your form, shots, and strategy in minutes.</p>
+</div>
+</div>
+<div class="flex flex-1 flex-col items-center gap-4 rounded-lg border border-border-light bg-white p-6 text-center">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined" style="font-size: 28px;">chat</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-text-primary text-lg font-bold">3. Improve with Your Coach</h3>
+<p class="text-text-secondary text-sm">Chat with your AI coach to get personalized drills and tips.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Highlight Cards Section -->
+<section class="py-16">
+<h2 class="text-text-primary text-center text-3xl font-bold tracking-tight mb-12">Key Features</h2>
+<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+<div class="flex flex-col gap-3 rounded-lg border border-border-light bg-white p-6">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">movie</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-text-primary text-lg font-bold">AI Video Breakdown</h3>
+<p class="text-text-secondary text-sm">Our system automatically detects shots, analyzes your form, and highlights key moments for improvement.</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-lg border border-border-light bg-white p-6">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">model_training</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-text-primary text-lg font-bold">Personalized Drills</h3>
+<p class="text-text-secondary text-sm">Based on your analysis, receive custom drill recommendations to target your specific weaknesses.</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-lg border border-border-light bg-white p-6">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">forum</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-text-primary text-lg font-bold">24/7 AI Chat Support</h3>
+<p class="text-text-secondary text-sm">Ask questions, get feedback, and discuss strategy with your AI coach anytime, anywhere.</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-lg border border-border-light bg-white p-6">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-text-primary text-lg font-bold">Progress Tracking</h3>
+<p class="text-text-secondary text-sm">Visualize your improvement over time with detailed stats and performance metrics.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonial Section -->
+<section class="py-16">
+<div class="flex flex-col items-center gap-6 rounded-lg bg-white p-10 text-center border border-border-light">
+<p class="text-text-primary text-xl italic leading-relaxed">"This AI coach is a game-changer. I was able to pinpoint weaknesses in my backhand I never knew I had. My game has improved more in the last month than in the previous year."</p>
+<div class="flex items-center gap-3">
+<img class="h-10 w-10 rounded-full object-cover" data-alt="Photo of a smiling woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtZXE_K3cojaik4hNdUtA5supUqDGW4wM0-nhyQAMHbl_Ry5yD0WIooWpuOuiCe-9nbwVl_FRdKgf2gh_nOO9GOLQpWWHEnJ6ctSTl_HrU0UNOrASM1mEiCm8O2V8CiOThCkOtyguxmpXItGoxT2z-PwxTD0RL0boJ9AD2WwKF9t4Qsr6GCDOd46ZhXp0gAbIBMUYKXnYfN8uLIkpfB9g7Qeovt-VLNcNxqELGuuUs0IXrP4vdClrOHvfqnNQAjQ_I7DhAUudGl7G3"/>
+<div class="text-left">
+<p class="font-bold text-text-primary">Sarah J.</p>
+<p class="text-sm text-text-secondary">Pickleball Enthusiast</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-20 border-t border-border-light">
+<div class="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 text-center md:flex-row">
+<p class="text-text-secondary text-sm">© 2024 AI Pickleball Coach. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-sm text-text-secondary hover:text-text-primary" href="#">Contact Us</a>
+<a class="text-sm text-text-secondary hover:text-text-primary" href="#">Terms of Service</a>
+<a class="text-sm text-text-secondary hover:text-text-primary" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

@@ -1,0 +1,22 @@
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+body {
+  font-family: 'Lexend', sans-serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Dark mode toggle mechanics */
+.theme-toggle:checked + .toggle-track .toggle-thumb {
+  transform: translateX(20px);
+}
+.theme-toggle:checked + .toggle-track {
+  background-color: #000;
+}
+html.dark .theme-toggle:checked + .toggle-track {
+  background-color: #111827; /* dark slate (gray-900) */
+}

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pickleball Coach AI - Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#111827", // A dark gray, for monochromatic theme
+                    "primary-light": "#F9FAFB",
+                    "primary-dark": "#111827",
+                    "background-light": "#FFFFFF",
+                    "background-dark": "#030712",
+                    "border-light": "#E5E7EB",
+                    "border-dark": "#374151",
+                    "text-primary-light": "#111827",
+                    "text-primary-dark": "#F9FAFB",
+                    "text-secondary-light": "#6B7280",
+                    "text-secondary-dark": "#9CA3AF",
+                },
+                fontFamily: {
+                    "display": ["Lexend", "sans-serif"]
+                },
+                borderRadius: {
+                    "DEFAULT": "0.5rem",
+                    "lg": "0.75rem",
+                    "xl": "1rem",
+                    "full": "9999px"
+                },
+            },
+        },
+    }
+    </script>
+<style>
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        vertical-align: middle;
+    }
+    </style>
+</head>
+<body class="font-display bg-background-light text-text-primary-light">
+<div class="flex h-screen">
+<aside class="w-60 flex-shrink-0 bg-background-light flex flex-col border-r border-border-light">
+<div class="flex items-center gap-3 p-6">
+<div class="size-8 text-text-primary-light">
+<svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"></path>
+</svg>
+</div>
+<h2 class="text-xl font-semibold leading-tight tracking-tight text-text-primary-light">Pickleball AI</h2>
+</div>
+<div class="flex h-full flex-col justify-between p-4">
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-text-secondary-light hover:bg-gray-100 hover:text-text-primary-light transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<p class="text-sm font-medium">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md bg-gray-100 text-text-primary-light" href="#">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">video_library</span>
+<p class="text-sm font-medium">Submissions</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-text-secondary-light hover:bg-gray-100 hover:text-text-primary-light transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-xl">group</span>
+<p class="text-sm font-medium">Users</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-text-secondary-light hover:bg-gray-100 hover:text-text-primary-light transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-xl">credit_card</span>
+<p class="text-sm font-medium">Subscription</p>
+</a>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-text-secondary-light hover:bg-gray-100 hover:text-text-primary-light transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<p class="text-sm font-medium">Settings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-md text-text-secondary-light hover:bg-gray-100 hover:text-text-primary-light transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-xl">logout</span>
+<p class="text-sm font-medium">Logout</p>
+</a>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col overflow-y-auto">
+<header class="sticky top-0 z-10 flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light px-10 py-4 bg-background-light/80 backdrop-blur-sm">
+<div class="flex-grow">
+<div class="relative max-w-sm">
+<div class="text-text-secondary-light flex items-center justify-center absolute left-3 top-1/2 -translate-y-1/2">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md text-text-primary-light focus:outline-0 focus:ring-2 focus:ring-primary-dark border border-border-light bg-transparent h-10 placeholder:text-text-secondary-light pl-10 text-sm" placeholder="Search submissions..." value=""/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center rounded-full size-10 text-text-secondary-light hover:bg-gray-100" id="theme-toggle">
+<span class="material-symbols-outlined">light_mode</span>
+</button>
+<button class="flex items-center justify-center rounded-full size-10 text-text-secondary-light hover:bg-gray-100">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Admin user avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDuHr4K_zMzFPMhCb0vt7MmeHYyJgIa0ULojfIHeIPxGGvRaSmtCUjJJOcJXK9SKP2jeCCcXk27pFI50d_DWPiLDlPtlUIiOi5awdluJn6L57BkTrm4lRQgXLOmyKdMSn_rtEfiEHcTAEGIFc1sWn7ZgLyjd_UIx8xIKtNYr-P7Ckiy5cMOS2B80N5TYvypkRQMcrsys_KP230-K3F-VHv7WRnTFJ4VdJLluIe2zHztA2a-TGRbYzJknI3M0Xx12SELBt_c77ownkjJ");'></div>
+<div class="flex flex-col text-sm">
+<h3 class="font-semibold text-text-primary-light">Alex Johnson</h3>
+<p class="text-text-secondary-light">Admin</p>
+</div>
+</div>
+</div>
+</header>
+<div class="p-10 space-y-8">
+<div class="flex flex-wrap justify-between gap-4 items-center">
+<h1 class="text-text-primary-light text-3xl font-semibold leading-tight tracking-tight">Video Submissions</h1>
+<div class="flex items-center gap-3">
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-md bg-background-light border border-border-light px-4 hover:bg-gray-50">
+<span class="material-symbols-outlined text-xl text-text-secondary-light">filter_list</span>
+<p class="text-text-primary-light text-sm font-medium">Filter</p>
+</button>
+<button class="flex items-center justify-center gap-2 px-4 py-2 bg-primary-dark text-white rounded-md text-sm font-semibold hover:bg-gray-800">
+<span class="material-symbols-outlined text-base">add</span>
+<span>New Submission</span>
+</button>
+</div>
+</div>
+<div class="border border-border-light rounded-lg overflow-x-auto">
+<table class="w-full text-sm text-left">
+<thead class="text-xs text-text-secondary-light uppercase bg-primary-light">
+<tr>
+<th class="p-4 w-12" scope="col"><input class="form-checkbox rounded bg-transparent border-gray-300 text-primary-dark focus:ring-primary-dark/50" type="checkbox"/></th>
+<th class="px-6 py-4 font-medium" scope="col">User</th>
+<th class="px-6 py-4 font-medium" scope="col">Video</th>
+<th class="px-6 py-4 font-medium" scope="col">Submitted</th>
+<th class="px-6 py-4 font-medium" scope="col">Status</th>
+<th class="px-6 py-4 font-medium text-right" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-border-light hover:bg-gray-50">
+<td class="p-4"><input class="form-checkbox rounded bg-transparent border-gray-300 text-primary-dark focus:ring-primary-dark/50" type="checkbox"/></td>
+<td class="px-6 py-4">
+<div class="font-medium text-text-primary-light">Jane Cooper</div>
+<div class="text-text-secondary-light">jane.cooper@example.com</div>
+</td>
+<td class="px-6 py-4 text-text-secondary-light">Match vs. The Johnsons</td>
+<td class="px-6 py-4 text-text-secondary-light">Oct 26, 2023</td>
+<td class="px-6 py-4">
+<div class="inline-flex items-center gap-2">
+<span class="size-2 rounded-full bg-gray-500"></span>
+<span class="text-text-secondary-light font-medium">Complete</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 rounded-md hover:bg-gray-200 text-text-secondary-light"><span class="material-symbols-outlined text-lg">play_circle</span></button>
+<button class="p-2 rounded-md hover:bg-gray-200 text-text-secondary-light"><span class="material-symbols-outlined text-lg">edit</span></button>
+</div>
+</td>
+</tr>
+<tr class="border-b border-border-light hover:bg-gray-50">
+<td class="p-4"><input class="form-checkbox rounded bg-transparent border-gray-300 text-primary-dark focus:ring-primary-dark/50" type="checkbox"/></td>
+<td class="px-6 py-4">
+<div class="font-medium text-text-primary-light">Cody Fisher</div>
+<div class="text-text-secondary-light">cody.fisher@example.com</div>
+</td>
+<td class="px-6 py-4 text-text-secondary-light">Tournament Highlights</td>
+<td class="px-6 py-4 text-text-secondary-light">Oct 25, 2023</td>
+<td class="px-6 py-4">
+<div class="inline-flex items-center gap-2">
+<span class="size-2 rounded-full bg-blue-500"></span>
+<span class="text-text-secondary-light font-medium">In Progress</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 rounded-md hover:bg-gray-200 text-text-secondary-light"><span class="material-symbols-outlined text-lg">play_circle</span></button>
+<button class="p-2 rounded-md hover:bg-gray-200 text-text-secondary-light"><span class="material-symbols-outlined text-lg">edit</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-gray-50">
+<td class="p-4"><input class="form-checkbox rounded bg-transparent border-gray-300 text-primary-dark focus:ring-primary-dark/50" type="checkbox"/></td>
+<td class="px-6 py-4">
+<div class="font-medium text-text-primary-light">Esther Howard</div>
+<div class="text-text-secondary-light">esther.howard@example.com</div>
+</td>
+<td class="px-6 py-4 text-text-secondary-light">Drills Session</td>
+<td class="px-6 py-4 text-text-secondary-light">Oct 24, 2023</td>
+<td class="px-6 py-4">
+<div class="inline-flex items-center gap-2">
+<span class="size-2 rounded-full bg-yellow-500"></span>
+<span class="text-text-secondary-light font-medium">Pending</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 rounded-md hover:bg-gray-200 text-text-secondary-light"><span class="material-symbols-outlined text-lg">play_circle</span></button>
+<button class="p-2 rounded-md hover:bg-gray-200 text-text-secondary-light"><span class="material-symbols-outlined text-lg">edit</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<nav aria-label="Table navigation" class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 pt-4">
+<span class="text-sm font-normal text-text-secondary-light">
+                        Showing
+                        <span class="font-semibold text-text-primary-light">1-10</span>
+                        of
+                        <span class="font-semibold text-text-primary-light">1000</span>
+</span>
+<ul class="inline-flex items-stretch -space-x-px text-sm">
+<li>
+<a class="flex items-center justify-center h-9 px-3 ml-0 text-text-secondary-light bg-background-light rounded-l-md border border-border-light hover:bg-gray-100 hover:text-text-primary-light" href="#">
+<span class="sr-only">Previous</span>
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-center h-9 px-4 leading-tight text-text-secondary-light bg-background-light border border-border-light hover:bg-gray-100 hover:text-text-primary-light" href="#">1</a>
+</li>
+<li>
+<a class="flex items-center justify-center h-9 px-4 leading-tight text-primary-dark bg-gray-100 border border-border-light font-semibold" href="#">2</a>
+</li>
+<li>
+<a class="flex items-center justify-center h-9 px-4 leading-tight text-text-secondary-light bg-background-light border border-border-light hover:bg-gray-100 hover:text-text-primary-light" href="#">3</a>
+</li>
+<li>
+<a class="flex items-center justify-center h-9 px-3 leading-tight text-text-secondary-light bg-background-light rounded-r-md border border-border-light hover:bg-gray-100 hover:text-text-primary-light" href="#">
+<span class="sr-only">Next</span>
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</main>
+</div>
+<script>
+    // The script is kept for potential future use of the theme toggle, 
+    // but the UI is now light mode by default.
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    themeToggleBtn.addEventListener('click', function() {
+        // This would toggle dark mode if the 'dark' class was on the html element
+        // document.documentElement.classList.toggle('dark');
+    });
+</script>
+</body></html>

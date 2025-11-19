@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Coach Chat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-old": "#13ec5b",
+              "background-light": "#f6f8f6",
+              "background-dark": "#101010",
+              "surface-light": "#ffffff",
+              "surface-dark": "#181818",
+              "border-light": "#e5e7eb",
+              "border-dark": "#262626",
+              "text-primary-light": "#0a0a0a",
+              "text-primary-dark": "#ffffff",
+              "text-secondary-light": "#525252",
+              "text-secondary-dark": "#a3a3a3",
+            },
+            fontFamily: {
+              "display": ["Lexend", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+</head>
+<body class="bg-background-light text-text-primary-light font-display">
+<div class="relative flex min-h-screen w-full">
+<aside class="flex h-screen w-64 flex-col bg-surface-light p-4 border-r border-border-light">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 px-3 h-16">
+<span class="material-symbols-outlined text-text-primary-light text-3xl">sports_tennis</span>
+<h1 class="text-text-primary-light text-xl font-bold">PickleAI</h1>
+</div>
+<div class="flex items-center gap-3 pt-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDK_WoAoCMscwYfXCtdz7CbTayh8XKNobiPNFwD7tRPPPC5lEOTNXSidHFnOSOu4sS-VyRKPeMzDVVUGnU4dR8PtNUY6wK3LXmb9jZSzoAVg7dFNUDk-CefscW-AVCjzg7mBEDpwu363ADq5ffrTGpHaZzNuvfwsbsv16MuohoHSVpRua2wlIICTNH0TAPxzcCYlhbOfbIcSUQKBVEyKVplNqAsgYCcm_7eKG6wzNT1iPwgRYxX3F5-TKahHMBwazm8WINalmSJfy7Z");'></div>
+<div class="flex flex-col">
+<h1 class="text-text-primary-light text-base font-medium leading-normal">Pat Smear</h1>
+<p class="text-text-secondary-light text-sm font-normal leading-normal">p.smear@email.com</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 text-text-secondary-light hover:text-text-primary-light hover:bg-neutral-100 rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-text-secondary-light hover:text-text-primary-light hover:bg-neutral-100 rounded-lg" href="#">
+<span class="material-symbols-outlined">videocam</span>
+<p class="text-sm font-medium leading-normal">My Videos</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-neutral-100 text-text-primary-light" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+<p class="text-sm font-medium leading-normal">AI Coach</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-text-secondary-light hover:text-text-primary-light hover:bg-neutral-100 rounded-lg" href="#">
+<span class="material-symbols-outlined">fitness_center</span>
+<p class="text-sm font-medium leading-normal">Drills Library</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-text-secondary-light hover:text-text-primary-light hover:bg-neutral-100 rounded-lg" href="#">
+<span class="material-symbols-outlined">subscriptions</span>
+<p class="text-sm font-medium leading-normal">Subscription</p>
+</a>
+</nav>
+</div>
+<div class="mt-auto flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-text-secondary-light hover:text-text-primary-light hover:bg-neutral-100 rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-text-secondary-light hover:text-text-primary-light hover:bg-neutral-100 rounded-lg" href="#">
+<span class="material-symbols-outlined">logout</span>
+<p class="text-sm font-medium leading-normal">Log Out</p>
+</a>
+</div>
+</aside>
+<main class="flex-1 flex flex-col bg-background-light">
+<header class="flex h-16 items-center justify-between border-b border-border-light bg-surface-light px-6 shrink-0">
+<h1 class="text-lg font-semibold text-text-primary-light">AI Coach</h1>
+<div class="flex items-center gap-4">
+<button class="text-text-secondary-light hover:text-text-primary-light">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-text-secondary-light hover:text-text-primary-light">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+</header>
+<div class="flex-1 flex flex-col p-6">
+<div class="flex-1 flex flex-col bg-surface-light border border-border-light rounded-xl">
+<div class="flex-1 p-6 space-y-6 overflow-y-auto">
+<div class="flex items-start gap-4">
+<div class="flex items-center justify-center shrink-0 size-10 rounded-full bg-neutral-100">
+<span class="material-symbols-outlined text-neutral-500" style="font-variation-settings: 'FILL' 1, 'wght' 300;">smart_toy</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="bg-neutral-100 p-3 rounded-lg rounded-tl-none max-w-lg">
+<p class="text-sm text-text-primary-light">Hello Pat! I'm your AI Pickleball Coach. To get started, please select a video you'd like to discuss from the panel on the right. You can ask me about specific moments, your technique, or for general advice based on the analysis.</p>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="flex items-center justify-center shrink-0 size-10 rounded-full bg-neutral-100">
+<span class="material-symbols-outlined text-neutral-500" style="font-variation-settings: 'FILL' 1, 'wght' 300;">smart_toy</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="bg-neutral-100 p-3 rounded-lg rounded-tl-none max-w-lg">
+<p class="text-sm text-text-primary-light">Once you've selected a video, feel free to ask me anything!</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-border-light">
+<div class="relative">
+<input class="w-full pl-10 pr-12 py-3 border border-border-light rounded-lg focus:ring-2 focus:ring-neutral-200 focus:outline-none text-sm" placeholder="Ask about your game..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary-light">search</span>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 bg-neutral-800 text-white rounded-md p-1.5 hover:bg-neutral-900 transition-colors">
+<span class="material-symbols-outlined text-base">arrow_upward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<aside class="w-96 bg-surface-light border-l border-border-light flex flex-col shrink-0">
+<div class="h-16 flex items-center justify-between px-6 border-b border-border-light">
+<h2 class="text-text-primary-light font-semibold">Select a Video</h2>
+<button class="text-text-secondary-light hover:text-text-primary-light">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+<div class="flex-1 p-6 overflow-y-auto space-y-4">
+<div class="p-3 rounded-lg border-2 border-neutral-600 bg-neutral-50">
+<div class="flex gap-4">
+<div class="relative aspect-video w-28 rounded overflow-hidden shrink-0">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover" data-alt="Video thumbnail of a pickleball match" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA4hF4vIm_oR_dcAmL45csvJz07n7ZniFEosBbscq-pzKnu9DX01yRWPVMXvmX3BN44EAnXB1b8DJ4XJJMa09LXBO7qsCXz1PPIWLWHQxAPuKzlKj1skqdxqHqVzahnib5H8knwDMQ2GS05b9ddQ_vrllt0-cKnGhNdqTpwpdgnYNaqp2EXN7L45II04aN9JhyQ5QlqaUj7DkjuyyRURGmjIyXZc8KQPBHSY3ZyYqUHgzErbL1hK_i4W4t_VCtHgkfYVIpfWXiL9pea')"></div>
+<p class="absolute bottom-1 right-1 bg-black/50 text-white text-xs px-1 py-0.5 rounded">12:47</p>
+</div>
+<div>
+<h3 class="font-medium text-sm text-text-primary-light">Match vs. The Johnsons</h3>
+<p class="text-xs text-text-secondary-light mt-1">08/15/2023</p>
+</div>
+</div>
+</div>
+<div class="p-3 rounded-lg border border-border-light hover:bg-neutral-50 cursor-pointer">
+<div class="flex gap-4">
+<div class="relative aspect-video w-28 rounded overflow-hidden shrink-0">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover" data-alt="Video thumbnail of a pickleball match" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBgbgXnAJaFXF3bTOuhqQk-MaB_uWYjiAto1UVqnHffn_rtb5q2yb8dxWag9HJEC7VbHKZhC2Xzvh2mJ27CDZGVvGER5kb3_le1TmuJIVnUBYmjRXHHI4RM8qF64ricPU0QW0F7Gn9d7WRWOjnNwhaWlfqUreF7-7vqtJqPdjmL2M0y3uG8IuB1JOspb0Wsyp03UaIFr93TTFbSJnoNsoW-M73oHtKWGRpaTocTffSf8sy2rscGalKr8rj9zEkGJQGPsJIeVZu6vAUC')"></div>
+<p class="absolute bottom-1 right-1 bg-black/50 text-white text-xs px-1 py-0.5 rounded">08:12</p>
+</div>
+<div>
+<h3 class="font-medium text-sm text-text-primary-light">Drills Session</h3>
+<p class="text-xs text-text-secondary-light mt-1">08/12/2023</p>
+</div>
+</div>
+</div>
+<div class="p-3 rounded-lg border border-border-light hover:bg-neutral-50 cursor-pointer">
+<div class="flex gap-4">
+<div class="relative aspect-video w-28 rounded overflow-hidden shrink-0">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover" data-alt="Video thumbnail of a pickleball match" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGT8Qlk9PmrgkCBNugdi1DEjMLFpRzrJ5J47D1h6uzwmWAyuDT2L07-yenJ2o9xrEJu0yW8_X6RVhquFWFpqYq64fE5yuulEBB235hNgToNbUXHtCX0PC7u6iEYulq1p8J0kV2R78FfagdbMpkJGMCHJn2SoSgqKNJWKiwzNQ2ZyHgVpF1ZPzdbRbR2OzMuZQK5bGzeAYEiQf712-V-onMaY24DX3FuroSp3gwWMFEb884IIDE5I75s2CajXRivHf1v-2qqzJnByj3')"></div>
+<p class="absolute bottom-1 right-1 bg-black/50 text-white text-xs px-1 py-0.5 rounded">21:03</p>
+</div>
+<div>
+<h3 class="font-medium text-sm text-text-primary-light">Casual Play w/ Sarah</h3>
+<p class="text-xs text-text-secondary-light mt-1">08/10/2023</p>
+</div>
+</div>
+</div>
+<div class="p-3 rounded-lg border border-border-light hover:bg-neutral-50 cursor-pointer">
+<div class="flex gap-4">
+<div class="relative aspect-video w-28 rounded overflow-hidden shrink-0">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover" data-alt="Video thumbnail of a pickleball match" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuABgxlux3R_SxjTAZfkOTI4Khf7HauzTg_zpHE5lsfUO21wlfdym43fkOhFbAgoMPyitlEXHjXaCGbcnEnfK79un1Hvefn0fZrDNIYS0flh6Fcv0QXytYd4OlP2IOCZtF8YKEHr-sHB0N8y7yN-PKmMei2Il_1QdH-Sb_VMy68l8Hr_R1Vk20AtDQdl26u7H-q4jaRIm13bEKmZdd-lEpW7Xr8H-E-Qdraatz4k3-eAVqlCcLYO9iwCDzI9pH867efArqLf6NAIc37t')"></div>
+<p class="absolute bottom-1 right-1 bg-black/50 text-white text-xs px-1 py-0.5 rounded">15:56</p>
+</div>
+<div>
+<h3 class="font-medium text-sm text-text-primary-light">League Match QF</h3>
+<p class="text-xs text-text-secondary-light mt-1">08/05/2023</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+
+</body></html>

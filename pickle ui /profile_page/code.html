@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pickleball Coach - Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2D3748",
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#222222] dark:text-gray-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="flex min-h-screen">
+<aside class="flex h-full min-h-screen flex-col justify-between border-r border-[#EAEAEA] dark:border-gray-700 bg-background-light dark:bg-background-dark p-4 w-64 fixed">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 px-3 py-2">
+<div class="size-6 text-primary dark:text-white">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h1 class="text-[#222222] dark:text-white text-base font-bold leading-normal">Pickleball Coach</h1>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 text-[#666666] dark:text-gray-400 hover:bg-[#F9F9F9] dark:hover:bg-gray-800 rounded-lg" href="#">
+<span class="material-symbols-outlined text-2xl">grid_view</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 dark:bg-primary/30 text-primary dark:text-white" href="#">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">person</span>
+<p class="text-sm font-bold leading-normal">Profile</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#666666] dark:text-gray-400 hover:bg-[#F9F9F9] dark:hover:bg-gray-800 rounded-lg" href="#">
+<span class="material-symbols-outlined text-2xl">video_library</span>
+<p class="text-sm font-medium leading-normal">My Videos</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#666666] dark:text-gray-400 hover:bg-[#F9F9F9] dark:hover:bg-gray-800 rounded-lg" href="#">
+<span class="material-symbols-outlined text-2xl">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-[#666666] dark:text-gray-400 hover:bg-[#F9F9F9] dark:hover:bg-gray-800 rounded-lg" href="#">
+<span class="material-symbols-outlined text-2xl">logout</span>
+<p class="text-sm font-medium leading-normal">Log Out</p>
+</a>
+</div>
+</aside>
+<div class="flex-1 ml-64">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#EAEAEA] dark:border-gray-700 px-10 py-3 sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="flex items-center gap-4 text-[#222222]">
+<h1 class="text-[#222222] dark:text-white text-xl font-bold leading-tight tracking-tight">Profile &amp; Settings</h1>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">New Analysis</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-transparent text-[#666666] dark:text-gray-300 gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 hover:bg-[#F9F9F9] dark:hover:bg-gray-800">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDURApjgQg3uvIA7t_mxkivrRJUX20IAnycD-_o9v7f9AwqQ7KRXU8RtcMGHdbwDZ98K6yJSnW4QMvh4ROCFew96RSOfimRHjlF4tOyrLLIyvfhqT5rSboRLTzbCyZ1_4pKzsES13MqHZOb6F3-37yZOmsYBR8NEbZIsknNjgp73ER5WtO-8uMih7Xk4blJQvrB7TqmUWiBmayj6xrCeve4a2GcRdHk2lvxir7HHZuaUINFl-4erffNlFun-13pXUquOdS1arYpmac-");'></div>
+</div>
+</header>
+<main class="p-10 bg-[#F9F9F9] dark:bg-black/20">
+<div class="max-w-4xl mx-auto flex flex-col gap-10">
+<div class="flex flex-col gap-6">
+<div class="flex flex-col gap-1">
+<h2 class="text-[#222222] dark:text-white text-2xl font-bold leading-tight tracking-tight">Personal Information</h2>
+<p class="text-[#666666] dark:text-gray-400 text-base font-normal leading-normal">Update your photo and personal details here.</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark border border-[#EAEAEA] dark:border-gray-700 rounded-xl">
+<div class="p-6">
+<div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
+<div class="flex gap-4 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-20 w-20" data-alt="User avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCJbAtA0pQTuBrP-oQDdGfvD_itHWz2ut0FgH_ex3t67Ju7EVOfOrZF4ocJBDFJD8ZzdA8pJmfbWa3Pt-jcPMTGzvScLXRisfFvC73z1Z_Th3kAQIDWCLeotDwsTLkhoZninh7G6Av7l4mrhZNDEJD1qvJjhJxv5fr7TUbH3x5ogN6dHP2RMqmZFSbRXSmDqWbaVBj-u4koZOpgJRhc8FZO5XU7y1ELbeHHbF2n5ttlNDrW4tHdBIuYdGvK-PlVLLP02j55TO3YFpI0");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-[#222222] dark:text-white text-lg font-bold leading-tight">Alex Doe</p>
+<p class="text-[#666666] dark:text-gray-400 text-sm font-normal leading-normal">alex.doe@email.com</p>
+</div>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#EAEAEA] dark:bg-gray-700 text-[#222222] dark:text-gray-200 text-sm font-bold leading-normal tracking-[0.015em] w-full max-w-[480px] @[480px]:w-auto hover:bg-[#dcdcdc] dark:hover:bg-gray-600">
+<span class="truncate">Upload New Photo</span>
+</button>
+</div>
+</div>
+<hr class="border-t border-[#EAEAEA] dark:border-gray-700"/>
+<div class="p-6 flex flex-col gap-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<label class="flex flex-col w-full">
+<p class="text-[#222222] dark:text-gray-200 text-sm font-medium leading-normal pb-2">Full Name</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#222222] dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50 border border-[#EAEAEA] dark:border-gray-700 bg-background-light dark:bg-background-dark h-12 placeholder:text-[#666666] dark:placeholder:text-gray-500 px-3 text-base font-normal leading-normal" value="Alex Doe"/>
+</label>
+<label class="flex flex-col w-full">
+<p class="text-[#222222] dark:text-gray-200 text-sm font-medium leading-normal pb-2">Email Address</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#666666] dark:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/50 border border-[#EAEAEA] dark:border-gray-700 bg-[#F9F9F9] dark:bg-gray-800 h-12 placeholder:text-[#666666] dark:placeholder:text-gray-500 px-3 text-base font-normal leading-normal" disabled="" value="alex.doe@email.com"/>
+</label>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<label class="flex flex-col w-full">
+<p class="text-[#222222] dark:text-gray-200 text-sm font-medium leading-normal pb-2">Skill Level</p>
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#222222] dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50 border border-[#EAEAEA] dark:border-gray-700 bg-background-light dark:bg-background-dark h-12 px-3 text-base font-normal leading-normal">
+<option>Beginner</option>
+<option selected="">Intermediate (3.5)</option>
+<option>Advanced</option>
+<option>Pro</option>
+</select>
+</label>
+<label class="flex flex-col w-full">
+<p class="text-[#222222] dark:text-gray-200 text-sm font-medium leading-normal pb-2">Playing Hand</p>
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#222222] dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50 border border-[#EAEAEA] dark:border-gray-700 bg-background-light dark:bg-background-dark h-12 px-3 text-base font-normal leading-normal">
+<option>Left</option>
+<option selected="">Right</option>
+</select>
+</label>
+</div>
+</div>
+<hr class="border-t border-[#EAEAEA] dark:border-gray-700"/>
+<div class="p-6 flex justify-end gap-4">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#EAEAEA] dark:bg-gray-700 text-[#222222] dark:text-gray-200 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#dcdcdc] dark:hover:bg-gray-600">
+<span class="truncate">Cancel</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Save Changes</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-6">
+<div class="flex flex-col gap-1">
+<h2 class="text-[#222222] dark:text-white text-2xl font-bold leading-tight tracking-tight">Account Settings</h2>
+<p class="text-[#666666] dark:text-gray-400 text-base font-normal leading-normal">Manage your password and account preferences.</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark border border-[#EAEAEA] dark:border-gray-700 rounded-xl">
+<div class="p-6 flex flex-col gap-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<label class="flex flex-col w-full">
+<p class="text-[#222222] dark:text-gray-200 text-sm font-medium leading-normal pb-2">Current Password</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#222222] dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50 border border-[#EAEAEA] dark:border-gray-700 bg-background-light dark:bg-background-dark h-12 placeholder:text-[#666666] dark:placeholder:text-gray-500 px-3 text-base font-normal leading-normal" placeholder="Enter current password" type="password"/>
+</label>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<label class="flex flex-col w-full">
+<p class="text-[#222222] dark:text-gray-200 text-sm font-medium leading-normal pb-2">New Password</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#222222] dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50 border border-[#EAEAEA] dark:border-gray-700 bg-background-light dark:bg-background-dark h-12 placeholder:text-[#666666] dark:placeholder:text-gray-500 px-3 text-base font-normal leading-normal" placeholder="Enter new password" type="password"/>
+</label>
+<label class="flex flex-col w-full">
+<p class="text-[#222222] dark:text-gray-200 text-sm font-medium leading-normal pb-2">Confirm New Password</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#222222] dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50 border border-[#EAEAEA] dark:border-gray-700 bg-background-light dark:bg-background-dark h-12 placeholder:text-[#666666] dark:placeholder:text-gray-500 px-3 text-base font-normal leading-normal" placeholder="Confirm new password" type="password"/>
+</label>
+</div>
+</div>
+<hr class="border-t border-[#EAEAEA] dark:border-gray-700"/>
+<div class="p-6 flex justify-between items-center">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-transparent text-red-600 dark:text-red-500 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-red-50 dark:hover:bg-red-900/20">
+<span class="truncate">Delete Account</span>
+</button>
+<div class="flex gap-4">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#EAEAEA] dark:bg-gray-700 text-[#222222] dark:text-gray-200 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#dcdcdc] dark:hover:bg-gray-600">
+<span class="truncate">Cancel</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Update Password</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+</body></html>
