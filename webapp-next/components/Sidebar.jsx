@@ -26,7 +26,7 @@ export default function Sidebar() {
   }
 
   return (
-    <aside className="flex w-64 flex-col justify-between border-r border-border-light dark:border-zinc-800 bg-background-light dark:bg-background-dark p-4">
+    <aside className="sticky top-0 h-screen w-64 flex flex-col justify-between border-r border-border-light dark:border-zinc-800 bg-background-light dark:bg-background-dark p-4 overflow-y-auto">
       <div className="flex flex-col gap-8">
         <div className="flex items-center gap-3 px-3">
           <span className="material-symbols-outlined text-3xl">sports_tennis</span>
